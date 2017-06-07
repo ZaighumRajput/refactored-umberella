@@ -28,12 +28,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="red_flasky\calculators\engine.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="red_flasky\calculators\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="red_flasky\__init__.py" />
     <Compile Include="red_flasky\views.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="red_flasky\" />
+    <Folder Include="red_flasky\calculators\" />
     <Folder Include="red_flasky\static\" />
     <Folder Include="red_flasky\static\content\" />
     <Folder Include="red_flasky\static\fonts\" />
