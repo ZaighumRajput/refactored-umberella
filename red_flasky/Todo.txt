@@ -4,6 +4,7 @@ Budget Page:
 	- add expenses
 		a) input form for expense
 		b) list
+		c) total tab
 		
 	- calculator?
 	

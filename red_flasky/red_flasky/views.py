@@ -17,8 +17,9 @@ def home():
     budget.addExpense(request.form.get("item"), request.form.get("cost"))
     return render_template(
         'index.html',
-        title='Home Page',
-        year=datetime.now().year,
-        expenses=budget.expenses
+        title        = 'Home Page',
+        year         = datetime.now().year,
+        expenses     = budget.expenses,
+        totalExpense = budget.totalExpense()
     )
 

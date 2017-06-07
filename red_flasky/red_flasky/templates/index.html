@@ -18,7 +18,7 @@
             <input type="text" name="item" />
             </td>
             <td>
-            <input type="text" name="cost" />
+            <input type="number" name="cost" />
             </td>
             <td>
             <input type="submit" value="Add" />
@@ -31,7 +31,10 @@
         <td>{{cost}}</td>
     </tr>
 {% endfor %}
-
+    <tr>
+        <td>Total:</td>
+        <td>{{totalExpense}}</td>
+    </tr>
 </table>
 
    <!-- 
