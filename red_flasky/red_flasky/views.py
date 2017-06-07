@@ -7,11 +7,12 @@ from flask        import render_template, request
 from red_flasky   import app
 from .calculators import engine
 
+todoList = engine.engine()
+
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     """Renders the home page."""
-    todoList = engine.engine()
     todoList.addTask(request.form.get("publication"))
     return render_template(
         'index.html',
