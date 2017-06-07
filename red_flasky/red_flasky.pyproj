@@ -75,6 +75,7 @@
     <Content Include="red_flasky\templates\contact.html" />
     <Content Include="red_flasky\templates\index.html" />
     <Content Include="red_flasky\templates\layout.html" />
+    <Content Include="Todo.txt" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
