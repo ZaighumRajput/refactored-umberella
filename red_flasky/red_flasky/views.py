@@ -15,11 +15,16 @@ budget   = engine.budget()
 def home():
     """Renders the home page."""
     budget.addExpense(request.form.get("item"), request.form.get("cost"))
+    budget.addIncome(request.form.get("income"))
+
     return render_template(
         'index.html',
         title        = 'Home Page',
         year         = datetime.now().year,
         expenses     = budget.expenses,
-        totalExpense = budget.totalExpense()
+        totalExpense = budget.totalExpense(),
+        income       = budget.income,
+        remaining    = budget.remainingBudget()
+        
     )
 

@@ -18,9 +18,18 @@ class budget(object):
             self.expenses[item] = cost
         except:
             pass
+        
+    def addIncome(self, income):
+        try:
+            self.income = float(income)
+        except:
+            self.income = 0
 
     def totalExpense(self):
         return sum(self.expenses.values())
+
+    def remainingBudget(self):
+        return self.income - self.totalExpense()
 
 from unittest import TestCase, TextTestRunner, TestLoader
 

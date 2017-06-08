@@ -7,7 +7,16 @@
     <p class="lead">I need a money machine, It means nothing to me </p>
     <p>--GUCCI MANE</p>
 
-<table>    
+<form action="/" method="post">
+    <input type="number" name="income"/>
+    <input type="submit" value="Add Income"/>
+</form>
+
+<h3>
+  REMAINING:  {{remaining}}
+</h3>
+
+<table border="1">    
     <caption>Expenses</caption>
     <tr>
         <th>Item</th>
@@ -37,20 +46,6 @@
     </tr>
 </table>
 
-   <!-- 
-    <form action="/" method="POST">
-        <input type="text" name="publication" placeholder="search" />
-        <input type="submit" value="Calculate" />
-    </form>
-
-    <h1>
-    {% if result %}
-        {% for item in result -%}
-        <li> {{item}}</li>
-        {%- endfor %}
-    {% endif %}
-    </h1>
-    --> 
     <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 </div>
 
