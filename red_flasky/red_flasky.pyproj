@@ -44,6 +44,7 @@
     <Folder Include="red_flasky\static\" />
     <Folder Include="red_flasky\static\content\" />
     <Folder Include="red_flasky\static\fonts\" />
+    <Folder Include="red_flasky\static\asset\" />
     <Folder Include="red_flasky\static\scripts\" />
     <Folder Include="red_flasky\templates\" />
   </ItemGroup>
@@ -75,6 +76,7 @@
     <Content Include="red_flasky\templates\contact.html" />
     <Content Include="red_flasky\templates\index.html" />
     <Content Include="red_flasky\templates\layout.html" />
+    <Content Include="todo.txt" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
