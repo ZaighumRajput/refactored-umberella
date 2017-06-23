@@ -31,7 +31,81 @@ class budget(object):
     def remainingBudget(self):
         return self.income - self.totalExpense()
 
+class IncomeStatment(object):
+    '''
+        Todo:
+        Dynamically create all line items
+        Dynamically create all the dependencies; for example, Revenue = [CostsOfGoodsSold - CostProfit]
+
+    '''
+
+    #these should be passed during initialization 
+    revenueItems        = ['CostsOfGoodsSold', 'GrossProfit']
+                           
+    operatingExpenses   = { #Major line item : Sub line item
+                           'Operating_Profit': ['SGA', 'RD', 'Depreciation'], 
+                           'Other'           : ['Interest Expense', 'Gain(Loss)Sale Assets']
+                          }
+
+    def __init__(self):
+        for lineItems in self.revenueItems:
+            setattr(self, lineItems, 0.0)
+
+        for lineItem, subLineItems in self.operatingExpenses.items():
+
+            for item in subLineItems:
+                setattr(self, item, 0.0)
+
+            #should be updated whenever sublineItem is
+            def createMajorLineItemSum(cls, subLineItems):
+                '''Returns the sum of sublineItems'''
+                total = sum([getattr(cls, m) for m in subLineItems])
+                setattr(self, lineItem, total) 
+
+            createMajorLineItemSum(self, subLineItems)
+
+    def updateMajorLineItemSum(self, majorLineItem):
+        total = 0.0
+        for subLineItems in getattr(self, majorLineItem):
+            total = sum([getattr(self, m) for m in subLineItems])
+        setattr(self, majorLineItem, total)
+
+
+class BalanceSheet(object):
+
+    assetItems      = []
+    liabilityItemrs = []
+    equityItems     = []
+
+    pass            
+
 from unittest import TestCase, TextTestRunner, TestLoader
+
+class TestsIncomeStatement(TestCase):
+    
+    def test_attributes_created(self):
+        companyIncome = IncomeStatment()
+        for lineItem in companyIncome.revenueItems:
+            self.assertTrue(hasattr(companyIncome,lineItem))
+
+        for lineItem, subLineItem in companyIncome.operatingExpenses.items():
+            self.assertTrue(hasattr(companyIncome,lineItem))
+            for item in subLineItem:
+                self.assertTrue(hasattr(companyIncome, item))
+                
+    #def test_MajorLineItemSum(self):
+    #    companyIncome = IncomeStatment()
+    #    companyIncome.SGA = -95.0 
+    #    companyIncome.RD  = -100.0
+    #    companyIncome.updateMajorLineItemSum('operatingExpenses')
+
+    #    self.assertEqual(companyIncome.Operating_Profit, -195.0)
+
+
+
+
+suite = TestLoader().loadTestsFromTestCase(TestsIncomeStatement)
+TextTestRunner().run(suite)
 
 class TestsBudget(TestCase):
 
