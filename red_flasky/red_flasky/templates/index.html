@@ -1,77 +1,15 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Construct Chub &amp; Co.</title>
+        <link rel="stylesheet" href="css/c01.css"/>
+    </head>
+    <body>
+        <h1>Constructive Chub &amp; Co.</h1>
+        <p>for all orders and inquiries please call</p>
+            <em>555-3344</em>
 
-{% block content %}
+        <script src="../static/scripts/add-content.js"></script>
+    </body>
 
-<div class="jumbotron">
-    <h1>I need a money machine</h1>
-    <p class="lead">I need a money machine, It means nothing to me </p>
-    <p>--GUCCI MANE</p>
-
-<table>    
-    <caption>Expenses</caption>
-    <tr>
-        <th>Item</th>
-        <th>Cost</th>
-    </tr>
-        <form action="/" method="Post">
-            <td>
-            <input type="text" name="item" />
-            </td>
-            <td>
-            <input type="text" name="cost" />
-            </td>
-            <td>
-            <input type="submit" value="Add" />
-            </td>
-        </form>
-    </td>
-{% for item, cost in expenses.items() %}
-    <tr>
-        <td>{{item}}</td>
-        <td>{{cost}}</td>
-    </tr>
-{% endfor %}
-
-</table>
-
-   <!-- 
-    <form action="/" method="POST">
-        <input type="text" name="publication" placeholder="search" />
-        <input type="submit" value="Calculate" />
-    </form>
-
-    <h1>
-    {% if result %}
-        {% for item in result -%}
-        <li> {{item}}</li>
-        {%- endfor %}
-    {% endif %}
-    </h1>
-    --> 
-    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-</div>
-
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Flask gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://flask.pocoo.org/docs/">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
-    </div>
-</div>
-
-{% endblock %}
+</html>
