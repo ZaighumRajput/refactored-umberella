@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="red_flasky\static\scripts\add-content.js" />
+    <Content Include="red_flasky\static\scripts\example.js" />
     <Content Include="requirements.txt" />
     <Content Include="red_flasky\static\content\bootstrap.css" />
     <Content Include="red_flasky\static\content\bootstrap.min.css" />
